@@ -76,7 +76,9 @@ function num2string(num) {
 
     const palabras_decenas = ['', '', '', 'treinta', 'cuarenta',
     'cincuenta', 'sesenta', 'setenta', 'ochenta', 'noventa']
-
+    if(unidades==0){
+      return palabras_decenas[decenas]
+    }
     return palabras_decenas[decenas] + ' y ' + num2string(unidades)
   }
   else {
