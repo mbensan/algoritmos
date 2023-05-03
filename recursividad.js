@@ -108,3 +108,21 @@ function num2string(num) {
   }
 }
 
+// hanoi(2, 'A', 'C')
+function hanoi (num_platos, inicio='A', fin='C') {
+  const palos = 'ABC'
+  const palo_medio = palos.replace(inicio, '').replace(fin, '')
+  // caso base
+  if (num_platos == 2) {
+    console.log("1 -> " + palo_medio)
+    console.log("2 -> " + fin)
+    console.log("1 -> " + fin)
+    return
+  }
+  // caso general
+  let platos = num_platos
+  hanoi(platos - 1, inicio, palo_medio)
+  console.log(platos + ' -> ' + fin)
+  hanoi(platos - 1, palo_medio, fin)
+}
+
