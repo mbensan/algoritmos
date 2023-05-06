@@ -38,7 +38,7 @@ function binary2Text(str) {
 
 //console.log(binary2Text('01101000 01101111 01101100 01100001'))
 
-function encrypt (message) {
+export function encrypt (message) {
   const binary = text2Binary(message)
   let paraph = lorem.generateParagraphs(1)
   paraph = paraph.split('').filter(x => x.toLowerCase() != x.toUpperCase()).join('')
@@ -67,7 +67,7 @@ function encrypt (message) {
 
 //console.log(encrypt('hola'))
 
-function decrypt (text) {
+export function decrypt (text) {
   let message = []
   for (let i = 0; i < text.length; i += 8) {
     let letter = ''
@@ -85,4 +85,3 @@ function decrypt (text) {
   return binary2Text(message.join(' '))
 }
 
-export default {encrypt, decrypt}

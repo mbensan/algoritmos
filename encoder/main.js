@@ -1,7 +1,7 @@
 import process from 'process'
-import { encrypt, decrypt } from './funciones.js'
+import { encrypt, decrypt } from './utils.js'
 
-function main () {
+function start () {
   if (process.argv.length < 4) {
     console.log("Se debe ejecutar: node main.js <enc/dec> <text>")
   }
@@ -17,4 +17,4 @@ function main () {
     console.log(result) 
   }
 }
-main()
+start()
